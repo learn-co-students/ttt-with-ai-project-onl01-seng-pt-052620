@@ -31,36 +31,32 @@ class Game
     def won?
         WIN_COMBINATIONS.any? do |winning_combo|
            if @board.cells[winning_combo[0]] == @board.cells[winning_combo[1]] && 
-            @board.cells[winning_combo[1]] ==  @board.cells[winning_combo[2]] && 
-            @board.cells[winning_combo[0]] == "X" || @board.cells[winning_combo[0]] == "0"
+            @board.cells[winning_combo[1]] ==  @board.cells[winning_combo[2]] 
                 return winning_combo
             end 
         end 
     end 
 
-    # def full?
-    #     if @board.include?(" ") == false && won? == false
-    #         return true
-    #     else
-    #         return false
-    #     end 
-    # end 
-    
+   def draw?
+        if !won? && @board.full?
+            return true 
+        else 
+            return false
+        end
+    end 
 
-    # def draw?
-    #     if !won? && full?
-    #         return true
-    #     else 
-    #         return false
-    #     end
-    # end 
-    
-    # def over?
-    #     if won? || draw?
-    #         return true
-    #     else
-    #         return false
-    #     end 
-    # end 
+    def over?
+        if won? || draw?
+            return true
+        else
+            return false
+        end 
+    end 
+
+    def winner
+      
+    end 
 
 end 
+
+

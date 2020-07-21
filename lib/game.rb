@@ -27,7 +27,6 @@ class Game
         if game_type == "0"
             Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board).play
         elsif game_type == "1"
-            puts "Who would you like to go first and be 'X'?"
             puts "Type 'me' or 'computer' to choose who you want to make the first move and be 'X'"
             second_input = gets.strip
                 if second_input == "me"

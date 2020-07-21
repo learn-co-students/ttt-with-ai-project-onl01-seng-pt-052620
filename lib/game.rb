@@ -25,20 +25,20 @@ class Game
         game_type = game_choice
 
         if game_type == "0"
-            Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board).play
+            Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O")).play
         elsif game_type == "1"
             puts "Type 'me' or 'computer' to choose who you want to make the first move and be 'X'"
             second_input = gets.strip
                 if second_input == "me"
-                    Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O"), board).play
+                    Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O")).play
                 elsif second_input == "computer"
-                    Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"), board).play
+                    Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O")).play
                 end 
         elsif game_type == "2"
-            Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new).play
+            Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O")).play
         end 
 
-        puts "Would you like to start a new game (y/n)"
+        puts "Would you like to start a new game (y/n)?"
         start until gets.chomp == "n"
 
     end 

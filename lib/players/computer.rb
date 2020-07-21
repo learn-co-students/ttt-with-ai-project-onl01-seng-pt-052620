@@ -5,7 +5,7 @@ module Players
         def move(board)
             computer_move = rand(1..9)
             if board.valid_move?(computer_move)
-                 computer_move.to_s
+                computer_move.to_s
             else
                 move
             end 
@@ -15,4 +15,5 @@ module Players
 
 end 
 
+# update(computer_move, self)
 # board.cells[computer_move] = self.token

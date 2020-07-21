@@ -20,6 +20,36 @@ class Game
         @board = board
     end 
 
+    def start
+        greeting
+        game_type = game_choice
+        if game_type == "0"
+            Game.new(player_1 == Players::Computer.new("X"), player_2 = Players::Computer.new("O"), board).play
+        elsif game_type == "1"
+            puts "Who would you like to go first and be 'X'"
+            puts "Type 'me' or 'computer' to choose who you want to make the first move and be 'X'"
+            second_input = gets.strip
+                if second_input == "me"
+                    Game.new(player_1 == Players::Human.new("X"), player_2 = Players::Computer.new("O")).play
+                elsif second_input == "computer"
+                    Game.new(player_1 == Players::Computer.new("X"), player_2 = Players::Human.new("O"), board).play
+                end 
+        elsif game_type == "2"
+            Game.new(player_1 == Players::Human.new("X"), player_2 = Players::Human.new("O"), board).play
+        else 
+            puts "Invalid entry, please try again!"
+        end 
+    end 
+
+    def greeting
+        puts "Welcome to Tic-Tac-Toe!"
+    end 
+
+    def game_choice
+        puts "What type of game would you like to play? 0, 1, or 2 player?"
+        @user_input = gets.strip
+    end 
+
     def current_player
         if self.board.cells.count { |space| space == "X" || space == "O"}.even?
             self.player_1

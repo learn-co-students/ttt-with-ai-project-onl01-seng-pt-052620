@@ -42,7 +42,6 @@ class Game
         
         input = gets.chomp
         start until input == "n"
-
     end 
 
     def greeting

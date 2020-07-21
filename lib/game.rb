@@ -98,7 +98,6 @@ class Game
             @board.update(current_move, player_now)
             @board.display
         else
-            puts "Invalid"
             turn
         end 
     end 

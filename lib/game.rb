@@ -39,7 +39,9 @@ class Game
         end 
 
         puts "Would you like to start a new game (y/n)?"
-        start until gets.chomp == "n"
+        
+        input = gets.chomp
+        start until input == "n"
 
     end 
 

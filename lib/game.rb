@@ -36,7 +36,7 @@ class Game
                     Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"), board).play
                 end 
         elsif game_type == "2"
-            Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board).play
+            Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new).play
         end 
 
         puts "Would you like to start a new game (y/n)"

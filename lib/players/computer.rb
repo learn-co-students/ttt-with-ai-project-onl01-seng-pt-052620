@@ -29,5 +29,3 @@ module Players
 
 end 
 
-# update(computer_move, self)
-# board.cells[computer_move] = self.token

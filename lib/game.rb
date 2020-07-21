@@ -41,6 +41,7 @@ class Game
 
         puts "Would you like to start a new game (y/n)"
         start until gets.chomp == "n"
+
     end 
 
     def greeting

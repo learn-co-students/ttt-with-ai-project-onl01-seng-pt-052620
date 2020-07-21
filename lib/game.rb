@@ -70,49 +70,18 @@ class Game
             turn
         end 
     end 
+
+    def play
+        until over?
+            turn
+        end 
+
+        if won?
+            puts "Congratulations #{winner}!"
+        else draw?
+            puts "Cat\'s Game!"
+        end 
+    end 
   
 
 end 
-
-
-#     index = input_to_index(user_input)
-#       if valid_move?(index) == true
-#         letter = current_player
-#         move(index, letter)
-#         display_board
-#       else 
-#         turn
-#       end 
-#   end 
-
-
-
-#       game = Game.new
-#       allow($stdout).to receive(:puts)
-
-#       expect(game.player_1).to receive(:gets).and_return("1")
-
-#       game.turn
-#     end
-
-#     it 'asks for input again after a failed validation' do
-#       game = Game.new
-#       allow($stdout).to receive(:puts)
-
-#       expect(game.player_1).to receive(:gets).and_return("invalid")
-#       expect(game.player_1).to receive(:gets).and_return("1")
-
-#       game.turn
-#     end
-
-#     it 'changes to player 2 after the first turn' do
-#       game = Game.new
-#       allow($stdout).to receive(:puts)
-
-#       expect(game.player_1).to receive(:gets).and_return("1")
-#       expect(game.player_2).to receive(:gets).and_return("2")
-
-#       game.turn
-#       game.turn
-#     end
-#   end
